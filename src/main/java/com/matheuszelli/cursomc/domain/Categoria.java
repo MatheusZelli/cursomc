@@ -2,10 +2,21 @@ package com.matheuszelli.cursomc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+//Dependencia JPA (para criação automática da tabela CATEGORIA no banco de dados H2 configurado no arquivo pom.xml)
+@Entity
 //Serializable permite que os dados seja convertidos para uma sequencia de bytes
 public class Categoria implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	//Geração da pk no BD
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	
