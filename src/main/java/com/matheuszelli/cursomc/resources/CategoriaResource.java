@@ -25,7 +25,6 @@ public class CategoriaResource {
 	//Verbo http
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public ResponseEntity<?>find(@PathVariable Integer id) { 
-		
 		Categoria obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
 		
