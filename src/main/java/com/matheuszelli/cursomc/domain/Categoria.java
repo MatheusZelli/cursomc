@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 //Dependencia JPA (para criação automática da tabela CATEGORIA no banco de dados H2 configurado no arquivo pom.xml)
 @Entity
 //Serializable permite que os dados seja convertidos para uma sequencia de bytes
@@ -25,7 +23,6 @@ public class Categoria implements Serializable {
 	private Integer id;
 	private String nome;
 	
-	@JsonManagedReference
 	@ManyToMany(mappedBy="categorias")
 	private List<Produto> produtos = new ArrayList<>();
 	
